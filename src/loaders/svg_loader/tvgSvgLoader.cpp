@@ -2302,7 +2302,7 @@ bool SvgLoader::read()
         return loader->builder.build(loader->loaderData.doc);
     };
 
-    rootProgress = async(launch::async, asyncTask, this);
+    rootProgress = async((launch::async | launch::deferred), asyncTask, this);
 
     return true;
 }
